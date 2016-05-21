@@ -1,0 +1,20 @@
+{
+  "name": "hkvalvik",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "fontset": "^0.1.1",
+    "gulp": "^3.9.1",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "normalize-scss": "^5.0.1",
+    "sass-media-mixins": "^1.0.0"
+  },
+  "repository": {
+    "type": "git"
+  }
+}
