@@ -23,7 +23,7 @@
     "hamburger.js": "^0.9.2",
     "normalize-scss": "^5.0.3",
     "sass-media-mixins": "git://github.com/hkvalvik/sass-media-mixins.git",
-    "sass-scale": "^1.1.0",
+    "sass-scale": "git://github.com/hkvalvik/sass-scale.git",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
