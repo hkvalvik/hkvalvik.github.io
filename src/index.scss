@@ -1,0 +1,192 @@
+$nav-width: 320px;
+
+$hamburger-bar-height: 1px;
+$hamburger-bar-gap: 5px;
+$hamburger-width: 1.5em;
+$header-transition-duration: .15s;
+$hamburger-transition-duration: $header-transition-duration;
+
+$fontset-color-primary: #C12127;
+
+@import "css/shadow";
+@import "../node_modules/normalize-scss/sass/normalize";
+@import "../node_modules/fontset/fonts/roboto.scss";
+@import "../node_modules/hamburger.js/index.scss";
+@import "../node_modules/sass-media-mixins/index.scss";
+
+@include normalize;
+
+$max-width: 1200px;
+
+@mixin gutter($property) {
+  @include fontset-size($property, nth($fontset-block-margin-bottom, 1)/2, nth($fontset-block-margin-bottom, 2)/2);
+}
+
+@mixin gutter-double($property) {
+  @include fontset-size($property, nth($fontset-block-margin-bottom, 1), nth($fontset-block-margin-bottom, 2));
+}
+
+@mixin container {
+  @include gutter-double(padding-left);
+  @include gutter-double(padding-right);
+  @include gutter(padding-top);
+  @include gutter(padding-bottom);
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+}
+
+.header {
+  border-bottom: solid 1px #eee;
+
+  &-content {
+    @include container;
+    position: relative;
+  }
+
+  &-toggle {
+    @include fontset-font(h4);
+    @include gutter(padding);
+    padding-left: 0 !important;
+    font-size: 18px !important;
+    line-height: 1;
+
+    &-icon {
+      vertical-align: middle;
+      top: -1px;
+    }
+
+    &-label {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+      font-weight: 100;
+    }
+  }
+
+  &-logo {
+    @include fontset-font(h4);
+    display: inline-block;
+    background-color: $fontset-color-primary;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: .75;
+    color: #fff;
+  }
+
+  &-nav {
+    @include fontset;
+    @include gutter-double(padding-top);
+    position: absolute;
+    top: 100%;
+    //top: 60px;
+    width: $nav-width;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: opacity $header-transition-duration ease;
+      opacity: 0;
+    }
+
+    nav {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 0;
+    }
+
+    nav a > * {
+      margin-bottom: 0;
+    }
+
+    nav h3 {
+      font-weight: 100;
+      transition: all $header-transition-duration ease;
+      opacity: 0;
+      transform: translateX(-5%);
+    }
+
+    nav h4 {
+      margin-bottom: 0;
+      border-bottom: solid 1px;
+      display: inline-block;
+      font-weight: 100;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    nav p {
+      @include fontset-size(margin-bottom, 8, 16);
+    }
+
+    nav li {
+      transition: all $header-transition-duration ease;
+      opacity: 0;
+      transform: translateX(-5%);
+    }
+  }
+
+  &--active &-nav:before {
+    opacity: 1;
+  }
+
+  &--active &-nav h3 {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &--active &-nav li {
+    transform: translateX(0);
+    opacity: 1;
+
+    @for $i from 1 to 20 {
+      &:nth-child(#{$i}){
+        transition-delay: $header-transition-duration * $i/2;
+      }
+    }
+  }
+}
+
+main {
+  @include container;
+  position: relative;
+  z-index: 1;
+  transition: all $header-transition-duration ease;
+  transform-origin: $nav-width 25vh;
+  max-height: 200vh;
+  overflow: hidden;
+
+  @include media-small {
+    transform-origin: 0 0;
+  }
+
+  &.main--inactive {
+    z-index: -1;
+    transform: translateX(($nav-width*.5) + 20px) scale(.33) perspective(1000px) rotateY(-45deg) rotateZ(5deg);
+
+    @include media-small {
+      opacity: 0;
+    }
+    @include media-medium-and-large {
+      opacity: .5;
+    }
+  }
+}
