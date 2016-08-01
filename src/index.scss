@@ -171,8 +171,6 @@ main {
   z-index: 1;
   transition: all $header-transition-duration ease;
   transform-origin: $nav-width 25vh;
-  max-height: 200vh;
-  overflow: hidden;
 
   @include media-small {
     transform-origin: 0 0;
@@ -181,6 +179,8 @@ main {
   &.main--inactive {
     z-index: -1;
     transform: translateX(($nav-width*.5) + 20px) scale(.33) perspective(1000px) rotateY(-45deg) rotateZ(5deg);
+    max-height: 200vh;
+    overflow: hidden;
 
     @include media-small {
       opacity: 0;

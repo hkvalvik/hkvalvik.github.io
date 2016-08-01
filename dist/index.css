@@ -1449,9 +1449,7 @@ main {
   transition: all 0.15s ease;
   -webkit-transform-origin: 320px 25vh;
       -ms-transform-origin: 320px 25vh;
-          transform-origin: 320px 25vh;
-  max-height: 200vh;
-  overflow: hidden; }
+          transform-origin: 320px 25vh; }
   main {
     padding-left: 0.875rem; }
     @media screen and (min-width: 20rem) {
@@ -1496,7 +1494,9 @@ main {
   main.main--inactive {
     z-index: -1;
     -webkit-transform: translateX(180px) scale(0.33) perspective(1000px) rotateY(-45deg) rotateZ(5deg);
-            transform: translateX(180px) scale(0.33) perspective(1000px) rotateY(-45deg) rotateZ(5deg); }
+            transform: translateX(180px) scale(0.33) perspective(1000px) rotateY(-45deg) rotateZ(5deg);
+    max-height: 200vh;
+    overflow: hidden; }
     @media (min-width: 0) and (max-width: 639px) {
       main.main--inactive {
         opacity: 0; } }
