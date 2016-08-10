@@ -1340,13 +1340,40 @@ textarea {
       -webkit-transform: translateX(-5%);
           -ms-transform: translateX(-5%);
               transform: translateX(-5%); }
+    .header-nav nav ul {
+      margin-bottom: 0.125rem; }
+      @media screen and (min-width: 20rem) {
+        .header-nav nav ul {
+          margin-bottom: -webkit-calc(0.125rem + 0.125 * (100vw - 20rem) / 55);
+          margin-bottom: calc(0.125rem + 0.125 * (100vw - 20rem) / 55); } }
+      @media screen and (min-width: 75rem) {
+        .header-nav nav ul {
+          margin-bottom: 0.25rem; } }
     .header-nav nav a {
       display: inline-block;
       padding: 0; }
+      .header-nav nav a {
+        margin-bottom: 0.125rem; }
+        @media screen and (min-width: 20rem) {
+          .header-nav nav a {
+            margin-bottom: -webkit-calc(0.125rem + 0.125 * (100vw - 20rem) / 55);
+            margin-bottom: calc(0.125rem + 0.125 * (100vw - 20rem) / 55); } }
+        @media screen and (min-width: 75rem) {
+          .header-nav nav a {
+            margin-bottom: 0.25rem; } }
     .header-nav nav a > * {
       margin-bottom: 0; }
     .header-nav nav h3 {
       font-weight: 100; }
+      .header-nav nav h3 {
+        margin-bottom: 0.75rem; }
+        @media screen and (min-width: 20rem) {
+          .header-nav nav h3 {
+            margin-bottom: -webkit-calc(0.75rem + 0.25 * (100vw - 20rem) / 55);
+            margin-bottom: calc(0.75rem + 0.25 * (100vw - 20rem) / 55); } }
+        @media screen and (min-width: 75rem) {
+          .header-nav nav h3 {
+            margin-bottom: 1rem; } }
     .header-nav nav h4 {
       margin-bottom: 0;
       border-bottom: solid 1px;
@@ -1355,14 +1382,16 @@ textarea {
       .header-nav nav h4:first-letter {
         text-transform: uppercase; }
     .header-nav nav p {
-      margin-bottom: 0.5rem; }
-      @media screen and (min-width: 20rem) {
-        .header-nav nav p {
-          margin-bottom: -webkit-calc(0.5rem + 0.5 * (100vw - 20rem) / 55);
-          margin-bottom: calc(0.5rem + 0.5 * (100vw - 20rem) / 55); } }
-      @media screen and (min-width: 75rem) {
-        .header-nav nav p {
-          margin-bottom: 1rem; } }
+      line-height: 1.5; }
+      .header-nav nav p {
+        margin-bottom: 0.5rem; }
+        @media screen and (min-width: 20rem) {
+          .header-nav nav p {
+            margin-bottom: -webkit-calc(0.5rem + 0.5 * (100vw - 20rem) / 55);
+            margin-bottom: calc(0.5rem + 0.5 * (100vw - 20rem) / 55); } }
+        @media screen and (min-width: 75rem) {
+          .header-nav nav p {
+            margin-bottom: 1rem; } }
   .header--active .header-nav nav {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);

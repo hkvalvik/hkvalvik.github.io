@@ -109,7 +109,12 @@ body {
       transform: translateX(-5%);
     }
 
+    nav ul {
+      @include fontset-size(margin-bottom, 2, 4);
+    }
+
     nav a {
+      @include fontset-size(margin-bottom, 2, 4);
       display: inline-block;
       padding: 0;
     }
@@ -119,6 +124,7 @@ body {
     }
 
     nav h3 {
+      @include fontset-size(margin-bottom, 12, 16);
       font-weight: 100;
       //transition: all $header-transition-duration ease;
       //opacity: 0;
@@ -138,6 +144,7 @@ body {
 
     nav p {
       @include fontset-size(margin-bottom, 8, 16);
+      line-height: 1.5;
     }
 
     //nav li {

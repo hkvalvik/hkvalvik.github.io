@@ -17,6 +17,10 @@ var data = {
     repositories: repositories,
     gists: [
         {
+            name: 'Gulp / browserify / babeljs',
+            url: 'https://gist.github.com/hkvalvik/e7c5493054796aef8645c772c136c402'
+        },
+        {
             name: 'Browser console snippets',
             url: 'https://gist.github.com/hkvalvik/83e25127ebf1e0c9803c4e07f9c0d7c0'
         }
