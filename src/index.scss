@@ -104,6 +104,9 @@ body {
     nav {
       position: relative;
       z-index: 1;
+      transition: all $hamburger-transition-duration ease;
+      opacity: 0;
+      transform: translateX(-5%);
     }
 
     nav a {
@@ -117,9 +120,9 @@ body {
 
     nav h3 {
       font-weight: 100;
-      transition: all $header-transition-duration ease;
-      opacity: 0;
-      transform: translateX(-5%);
+      //transition: all $header-transition-duration ease;
+      //opacity: 0;
+      //transform: translateX(-5%);
     }
 
     nav h4 {
@@ -137,11 +140,16 @@ body {
       @include fontset-size(margin-bottom, 8, 16);
     }
 
-    nav li {
-      transition: all $header-transition-duration ease;
-      opacity: 0;
-      transform: translateX(-5%);
-    }
+    //nav li {
+    //  transition: all $header-transition-duration ease;
+    //  opacity: 0;
+    //  transform: translateX(-5%);
+    //}
+  }
+
+  &--active &-nav nav {
+    transform: translateX(0);
+    opacity: 1;
   }
 
   &--active &-nav:before {
@@ -149,19 +157,19 @@ body {
   }
 
   &--active &-nav h3 {
-    transform: translateX(0);
-    opacity: 1;
+    //transform: translateX(0);
+    //opacity: 1;
   }
 
   &--active &-nav li {
-    transform: translateX(0);
-    opacity: 1;
+    //transform: translateX(0);
+    //opacity: 1;
 
-    @for $i from 1 to 20 {
-      &:nth-child(#{$i}){
-        transition-delay: $header-transition-duration * $i/2;
-      }
-    }
+    //@for $i from 1 to 20 {
+    //  &:nth-child(#{$i}){
+    //    transition-delay: $header-transition-duration * $i/2;
+    //  }
+    //}
   }
 }
 

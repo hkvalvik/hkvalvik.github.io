@@ -5,6 +5,7 @@ var header = new Header();
 
 var analytics = new Analytics();
 
+/*
 function appendCss(url){
     var head = document.head;
     var link = document.createElement('link');
@@ -15,4 +16,4 @@ function appendCss(url){
 }
 
 appendCss('/dist/index.css');
-
+*/

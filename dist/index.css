@@ -1333,20 +1333,20 @@ textarea {
       opacity: 0; }
     .header-nav nav {
       position: relative;
-      z-index: 1; }
-    .header-nav nav a {
-      display: inline-block;
-      padding: 0; }
-    .header-nav nav a > * {
-      margin-bottom: 0; }
-    .header-nav nav h3 {
-      font-weight: 100;
+      z-index: 1;
       -webkit-transition: all 0.15s ease;
       transition: all 0.15s ease;
       opacity: 0;
       -webkit-transform: translateX(-5%);
           -ms-transform: translateX(-5%);
               transform: translateX(-5%); }
+    .header-nav nav a {
+      display: inline-block;
+      padding: 0; }
+    .header-nav nav a > * {
+      margin-bottom: 0; }
+    .header-nav nav h3 {
+      font-weight: 100; }
     .header-nav nav h4 {
       margin-bottom: 0;
       border-bottom: solid 1px;
@@ -1363,82 +1363,13 @@ textarea {
       @media screen and (min-width: 75rem) {
         .header-nav nav p {
           margin-bottom: 1rem; } }
-    .header-nav nav li {
-      -webkit-transition: all 0.15s ease;
-      transition: all 0.15s ease;
-      opacity: 0;
-      -webkit-transform: translateX(-5%);
-          -ms-transform: translateX(-5%);
-              transform: translateX(-5%); }
+  .header--active .header-nav nav {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1; }
   .header--active .header-nav:before {
     opacity: 1; }
-  .header--active .header-nav h3 {
-    -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1; }
-  .header--active .header-nav li {
-    -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1; }
-    .header--active .header-nav li:nth-child(1) {
-      -webkit-transition-delay: 0.075s;
-              transition-delay: 0.075s; }
-    .header--active .header-nav li:nth-child(2) {
-      -webkit-transition-delay: 0.15s;
-              transition-delay: 0.15s; }
-    .header--active .header-nav li:nth-child(3) {
-      -webkit-transition-delay: 0.225s;
-              transition-delay: 0.225s; }
-    .header--active .header-nav li:nth-child(4) {
-      -webkit-transition-delay: 0.3s;
-              transition-delay: 0.3s; }
-    .header--active .header-nav li:nth-child(5) {
-      -webkit-transition-delay: 0.375s;
-              transition-delay: 0.375s; }
-    .header--active .header-nav li:nth-child(6) {
-      -webkit-transition-delay: 0.45s;
-              transition-delay: 0.45s; }
-    .header--active .header-nav li:nth-child(7) {
-      -webkit-transition-delay: 0.525s;
-              transition-delay: 0.525s; }
-    .header--active .header-nav li:nth-child(8) {
-      -webkit-transition-delay: 0.6s;
-              transition-delay: 0.6s; }
-    .header--active .header-nav li:nth-child(9) {
-      -webkit-transition-delay: 0.675s;
-              transition-delay: 0.675s; }
-    .header--active .header-nav li:nth-child(10) {
-      -webkit-transition-delay: 0.75s;
-              transition-delay: 0.75s; }
-    .header--active .header-nav li:nth-child(11) {
-      -webkit-transition-delay: 0.825s;
-              transition-delay: 0.825s; }
-    .header--active .header-nav li:nth-child(12) {
-      -webkit-transition-delay: 0.9s;
-              transition-delay: 0.9s; }
-    .header--active .header-nav li:nth-child(13) {
-      -webkit-transition-delay: 0.975s;
-              transition-delay: 0.975s; }
-    .header--active .header-nav li:nth-child(14) {
-      -webkit-transition-delay: 1.05s;
-              transition-delay: 1.05s; }
-    .header--active .header-nav li:nth-child(15) {
-      -webkit-transition-delay: 1.125s;
-              transition-delay: 1.125s; }
-    .header--active .header-nav li:nth-child(16) {
-      -webkit-transition-delay: 1.2s;
-              transition-delay: 1.2s; }
-    .header--active .header-nav li:nth-child(17) {
-      -webkit-transition-delay: 1.275s;
-              transition-delay: 1.275s; }
-    .header--active .header-nav li:nth-child(18) {
-      -webkit-transition-delay: 1.35s;
-              transition-delay: 1.35s; }
-    .header--active .header-nav li:nth-child(19) {
-      -webkit-transition-delay: 1.425s;
-              transition-delay: 1.425s; }
 
 main {
   max-width: 1200px;
