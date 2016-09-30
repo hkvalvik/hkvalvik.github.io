@@ -1,0 +1,99 @@
+$bubble-color: $fontset-color-primary;
+$bubble-bubbles: 25% 25% 5vw, 50% 50% 10vw;
+$bubble-max-size: 5vw;
+
+@keyframes bubbles-item {
+  0% {
+    width: 5vw;
+    height: 5vw;
+  }
+  100% {
+    width: 15vw;
+    height: 15vw;
+  }
+}
+
+.bubbles {
+  overflow: hidden;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  //transform: perspective(1000px) rotateX(45deg);
+
+  display: none;
+
+  &-content {
+    position: absolute;
+    top: -$bubble-max-size;
+    left: -$bubble-max-size;
+    width: 100vw + ($bubble-max-size * 2);
+    height: 100vw + ($bubble-max-size * 2);
+
+    > * {
+      position: absolute;
+      //transform: rotate(45deg);
+      animation: {
+        //name: bubbles-item;
+        duration: 1s;
+        fill-mode: both;
+      };
+
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        //border: solid 1px rgba(black, .5);
+        background-color: $fontset-color-primary;
+        box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px rgba(black, .5);
+
+      }
+
+      //@for $i from 1 to length($bubble-bubbles)+1 {
+      //  $bubble: nth($bubble-bubbles, $i);
+      //  @debug $i;
+      //  &:nth-child(#{$i}){
+      //    top: nth($bubble, 1);
+      //    left: nth($bubble, 2);
+      //    width: nth($bubble, 3);
+      //    height: nth($bubble, 3);
+      //  }
+      //}
+
+      @for $i from 1 to 100 {
+        &:nth-child(#{$i}){
+          top: random() * 100%;
+          left: random() * 100%;
+          $size: random() * $bubble-max-size;
+          width: $size;
+          height: $size;
+          background-color: rgba(random() * $bubble-color, .05);
+          border: solid 1px rgba(random() * $bubble-color, .05);
+          border-radius: random()*100% random()*100% random()*100% random()*100%;
+
+          $eye-distance: min(random() * 10%, 5%);
+
+          &:before {
+            $size: random() * 25%;
+            width: $size;
+            height: $size;
+            top: 25%;
+            left: 50% - $size - $eye-distance;
+          }
+
+          &:after {
+            $size: random() * 25%;
+            width: $size;
+            height: $size;
+            top: 25%;
+            right: 50% - $size - $eye-distance;
+          }
+        }
+      }
+    }
+  }
+}

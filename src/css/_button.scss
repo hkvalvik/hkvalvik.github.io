@@ -1,0 +1,10 @@
+.button {
+  @include fontset-font(h6);
+  display: inline-block;
+  padding: .8em 1.2em .8em 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+  background-color: $fontset-color-primary;
+  color: $fontset-color-primary-contrast;
+}

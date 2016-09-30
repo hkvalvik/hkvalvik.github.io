@@ -1,0 +1,22 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "3c2cfcbad5062929d63a249f3858e38b",
+      "css": "git",
+      "code": 61523,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "c737078cb69dfd2e8484e134ecbce791",
+      "css": "person",
+      "code": 61524,
+      "src": "elusive"
+    }
+  ]
+}

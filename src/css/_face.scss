@@ -1,0 +1,232 @@
+$face-color: $fontset-color-primary;
+
+$face-keyframes: 100;
+
+$face-size: 50px;
+
+$face-min-size: 75;
+
+$face-min-radius: 45%;
+$face-max-radius: 50%;
+
+$face-max-movement: 5%;
+//$face-eye-min-height: 70;
+//$face-eye-max-size: 75;
+
+$face-eye-top: -2.5%;
+$face-eye-min-width: 20;
+$face-eye-max-width: 25;
+$face-eye-min-height: 5;
+$face-eye-max-height: 40;
+$face-eye-margin: 1.5%;
+
+$face-animation-duration: 5s;
+$face-animation-timing-function: ease;
+$face-eye-animation-duration: $face-animation-duration;
+$face-mouth-animation-duration: $face-animation-duration;
+
+$face-eye-pupil-animation-duration: 10s;
+
+@function face-max-random($max){
+  @return min(random() * 100%, $max);
+}
+
+@function face-min-random($min){
+  @return max(random() * 100%, $min);
+}
+
+@function face-random-between($min, $max){
+  @return floor(random() * ($max - $min + 1) + $min);
+}
+
+$face-keyframe-interval: 10;
+
+@mixin face-keyframes {
+  @for $i from 0 to $face-keyframes + 1 {
+    $until: $i + $face-keyframe-interval - 5;
+    @if $until > 100 {
+      $until: 100;
+    }
+    @if $i%$face-keyframe-interval == 0 {
+      #{$i}%,
+      #{$until}% {
+        @content;
+      }
+    }
+  }
+}
+
+@keyframes face {
+  @include face-keyframes {
+    $size: face-random-between($face-min-size, 100) / 100;
+    transform: translate(face-max-random($face-max-movement), face-max-random($face-max-movement)) scale($size);
+    border: solid 1px rgba(random() * $face-color, .05);
+    border-radius: face-random-between($face-min-radius, $face-max-radius)
+    face-random-between($face-min-radius, $face-max-radius)
+    face-random-between($face-min-radius, $face-max-radius)
+    face-random-between($face-min-radius, $face-max-radius);
+  }
+}
+
+@mixin eye-keyframes($side) {
+  @include face-keyframes {
+      $width: face-random-between($face-eye-min-width, $face-eye-max-width) / 100;
+      $height: max($width, face-random-between($face-eye-min-height, $face-eye-max-height) / 100);
+      transform: scaleX($width) scaleY($height) translateX(0%) translateY(0%);
+      #{$side}: -$face-eye-margin;
+    }
+}
+
+@keyframes face-eye-left {
+  @include eye-keyframes(left);
+}
+
+@keyframes face-eye-right {
+  @include eye-keyframes(right);
+}
+
+@keyframes face-mouth {
+  @include face-keyframes {
+    $top: face-random-between(5%, 15%);
+    $bottom: face-random-between(25%, 100%);
+    $left-right: face-random-between($top, $bottom);
+    top: $top;
+    right: $left-right;
+    bottom: $bottom;
+    left: $left-right;
+  }
+}
+
+
+.face {
+  display: block;
+  position: relative;
+  width: $face-size;
+  height: $face-size;
+
+  &:hover &-content {
+    animation-play-state: running;
+  }
+
+  &:hover &-mouth:before {
+    animation-play-state: running;
+  }
+
+  &-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $fontset-color-primary;
+    border-radius: 50%;
+    animation: {
+      name: face;
+      play-state: paused;
+      duration: $face-animation-duration;
+      fill-mode: both;
+      timing-function: $face-animation-timing-function;
+      iteration-count: infinite;
+    };
+  }
+
+  &-eye {
+    @include shadow-8dp;
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    border: solid 1px rgba(black, .5);
+    background-color: #000;
+    //box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px rgba(black, .5);
+    //box-shadow: inset 0 0 0 12px #fff;
+    width: 50%;
+    height: 50%;
+    top: $face-eye-top;
+    transform: scale(.25);
+    animation: {
+      duration: $face-eye-animation-duration;
+      fill-mode: both;
+      timing-function: $face-animation-timing-function;
+      iteration-count: infinite;
+    };
+
+    &:nth-child(1) {
+      animation-name: face-eye-left;
+      transform-origin: right center;
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      animation-name: face-eye-right;
+      transform-origin: left center;
+      right: 0;
+    }
+
+    /*
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 25%;
+      height: 25%;
+      border-radius: 50%;
+      background-color: #000;
+      animation: {
+        name: face-eye-pupil;
+        duration: $face-eye-pupil-animation-duration;
+        fill-mode: both;
+        fill-mode: alternate;
+        timing-function: linear;
+        iteration-count: infinite;
+      };
+    }
+
+    &:before {
+
+    }
+
+    &:after {
+
+    }
+    */
+  }
+
+  $face-mouth-width: 90%;
+  $face-mouth-top: 35%;
+  $face-mouth-bottom: 5%;
+
+  &-mouth {
+    position: absolute;
+    top: $face-mouth-top;
+    bottom: $face-mouth-bottom;
+    left: 50%;
+    width: $face-mouth-width;
+    background-color: darken($fontset-color-primary, 15%);
+    @include shadow-8dp;
+    border-radius: 5% 5% 50% 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 5% 5% 50% 50%;
+      background-color: #000;
+
+      animation: {
+        name: face-mouth;
+        play-state: paused;
+        duration: $face-mouth-animation-duration;
+        fill-mode: both;
+        timing-function: $face-animation-timing-function;
+        iteration-count: infinite;
+      };
+    }
+  }
+}

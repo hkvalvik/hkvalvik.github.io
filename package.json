@@ -11,10 +11,12 @@
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
     "extend": "^3.0.0",
-    "fontset": "^0.2.1",
+    "fontset": "^0.3.0",
     "gulp": "^3.9.1",
     "gulp-compile-handlebars": "^0.6.1",
+    "gulp-concat": "^2.6.0",
     "gulp-connect": "^5.0.0",
+    "gulp-fontello": "^0.4.6",
     "gulp-postcss": "^6.1.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
@@ -31,4 +33,3 @@
     "type": "git"
   }
 }
-

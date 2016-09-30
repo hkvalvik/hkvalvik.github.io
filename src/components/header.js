@@ -37,24 +37,35 @@ module.exports = class {
                 return `
                     <header class="header">
                         <div class="header-content">
-                            <button class="hamburger header-toggle">
-                                <span class="hamburger-icon header-toggle-icon"></span>
-                                <span class="header-toggle-label">
-                                    Menu
-                                </span>
-                            </button>
-                            <div class="header-nav">
-                                <nav>
-                                    <h3>Repositories</h3>
-                                    <ul>
-                                        ${data.repositories.map(this.options.repositoryTemplate).join('')}
-                                    </ul>
-                                    <h3>Gists</h3>
-                                    <ul>
-                                        ${data.gists.map(this.options.gistTemplate).join('')}
-                                    </ul>
-                                </nav>
+                            <div class="header-home">
+                                <a href="/" class="face">
+                                    <div class="face-content">
+                                        <div class="face-eye"></div>
+                                        <div class="face-eye"></div>
+                                        <div class="face-mouth"></div>
+                                    </div>
+                                </a>
                             </div>
+                            <div class="header-menu">
+                                <button class="hamburger header-toggle">
+                                    <span class="header-toggle-label">
+                                        Menu
+                                    </span>
+                                    <span class="hamburger-icon header-toggle-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="header-nav" data-header-nav>
+                            <nav>
+                                <h3>Repositories</h3>
+                                <ul>
+                                    ${data.repositories.map(this.options.repositoryTemplate).join('')}
+                                </ul>
+                                <h3>Gists</h3>
+                                <ul>
+                                    ${data.gists.map(this.options.gistTemplate).join('')}
+                                </ul>
+                            </nav>
                         </div>
                     </header>
                 `;
@@ -65,6 +76,7 @@ module.exports = class {
     constructor(element = null, options = {}){
         this.options = extend(true, {}, this.constructor._defaults, options);
         this.element = element || this._createElement();
+        this._active = false;
         var toggle = this.element.querySelector('.hamburger');
         new Hamburger(toggle);
         toggle.addEventListener('click', this._toggle.bind(this));
@@ -78,8 +90,33 @@ module.exports = class {
     }
 
     _toggle(){
-        this.element.classList.toggle(this.options.activeClass);
-        document.querySelector('main').classList.toggle(this.options.inactiveMainClass);
+        if(!this._active){
+            this._showNav();
+        }
+        else {
+            this._hideNav();
+        }
+    }
+
+    _showNav(){
+        this.element.classList.add(this.options.activeClass);
+        var main = document.querySelector('main');
+        var nav = this.element.querySelector('[data-header-nav]');
+        nav.style.position = 'static';
+        nav.style.height = 'auto';
+        main.style.transform = 'translateY('+nav.offsetHeight+'px)';
+        nav.style.position = 'absolute';
+        nav.style.height = '';
+        main.classList.add(this.options.inactiveMainClass);
+        this._active = true;
+    }
+
+    _hideNav(){
+        this.element.classList.remove(this.options.activeClass);
+        var main = document.querySelector('main');
+        main.style.transform = 'translateY(0)';
+        main.classList.remove(this.options.inactiveMainClass);
+        this._active = false;
     }
 
 }
