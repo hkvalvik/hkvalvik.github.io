@@ -234,3 +234,30 @@ main {
     }
   }
 }
+
+.github-ribbon {
+  @include fontset-font(h6);
+  @include shadow-2dp;
+  position: fixed;
+  z-index: 4;
+  bottom: -73px;
+  right: -83px;
+  display: block;
+  transform: rotate(-45deg) translateY(0%);
+  transform-origin: top left;
+  padding: 10px;
+  width: 200px;
+  background-color: $fontset-color-primary;
+  text-decoration: none;
+  text-align: center;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    bottom: 2px;
+    left: 2px;border: dotted 1px #fff;
+  }
+}
