@@ -105,6 +105,7 @@ module.exports = class {
         nav.style.position = 'static';
         nav.style.height = 'auto';
         main.style.transform = 'translateY('+nav.offsetHeight+'px)';
+        main.style.webkitTransform = 'translateY('+nav.offsetHeight+'px)';
         nav.style.position = 'absolute';
         nav.style.height = '';
         main.classList.add(this.options.inactiveMainClass);
@@ -115,6 +116,7 @@ module.exports = class {
         this.element.classList.remove(this.options.activeClass);
         var main = document.querySelector('main');
         main.style.transform = 'translateY(0)';
+        main.style.webkitTransform = 'translateY(0)';
         main.classList.remove(this.options.inactiveMainClass);
         this._active = false;
     }

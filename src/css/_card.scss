@@ -28,12 +28,7 @@ $card-padding: 5% 5% 5% 0;
 
   &-text {
     flex: 2;
-  }
-
-  header {
-    @include fontset-font(h6);
-    padding: $card-padding;
-    border-bottom: solid 1px $card-color;
+    padding-top: nth($card-padding, 1) * 1.5;
   }
 
   h2 {
@@ -47,7 +42,6 @@ $card-padding: 5% 5% 5% 0;
   }
 
   footer {
-    border-top: solid 1px $card-color;
 
     [class*="icon"] {
       display: inline-block;
