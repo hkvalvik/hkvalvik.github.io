@@ -1,0 +1,17 @@
+main {
+  @include container;
+  position: relative;
+  z-index: 2;
+  transition: all $main-transition-duration ease;
+  transform-origin: $nav-width 25vh;
+
+  @include media-small {
+    transform-origin: 0 0;
+  }
+
+  &.main--inactive {
+    z-index: -1;
+    max-height: 200vh;
+    overflow: hidden;
+  }
+}

@@ -1,75 +1,175 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Hkvalvik</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/dist/index.css">
 </head>
-<body class="index-body">
-<a href="https://github.com/hkvalvik" class="github-ribbon">Fork me on<br>GitHub</a>
+<body class="home">
 <main>
-    {{!--
-    <div class="bubbles">
-        <div class="bubbles-content">
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div class="home__container">
+        <div class="home__profile">
+            <section class="card">
+                <div class="card__image">
+                    <div class="card__person"></div>
+                </div>
+                <div class="card__text">
+                    <h1>
+                        Håvard Kvalvik
+                    </h1>
+                    <p>
+                        Frontend developer
+                    </p>
+                    <footer>
+                        <ul class="card__link-list" >
+                            <li>
+                                <a class="card__link" href="https://github.com/hkvalvik/" target="_blank">
+                                    GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a class="card__link" href="https://www.npmjs.com/~hkvalvik" target="_blank">
+                                    NPM
+                                </a>
+                            </li>
+                            <li>
+                                <a class="card__link" href="https://www.linkedin.com/in/håvard-kvalvik-11bb3512a/" target="_blank">
+                                    LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </footer>
+                </div>
+            </section>
+        </div>
+        <div class="home__cv">
+            <section class="cv">
+                <header class="cv__header">
+                    <h2 class="cv__heading">
+                        Resume
+                    </h2>
+                </header>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>
+                            <p>
+                                Frontend developer
+                            </p>
+                            <p>
+                                Geta
+                            </p>
+                        </th>
+                        <td>2014 - today</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>
+                                Frontend developer
+                            </p>
+                            <p>
+                                Itera Gazette
+                            </p>
+                        </th>
+                        <td>2010 - 2014</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>
+                                Developer
+                            </p>
+                            <p>
+                                One Communication
+                            </p>
+                        </th>
+                        <td>2007 - 2010</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>
+                                Developer
+                            </p>
+                            <p>
+                                Occasional freelance work
+                            </p>
+                        </th>
+                        <td>2005 - 2012</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>
+                                Bachelor of Multimedia /
+                                <br>
+                                Minor in Digital Marketing
+                            </p>
+                            <p>
+                                Murdoch University of Western Australia
+                            </p>
+                        </th>
+                        <td>2004 - 2007</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="skills">
+                <header class="skills__header">
+                    <h2 class="skills__heading">
+                        Skills
+                    </h2>
+                    <div class="skills__emoticons">
+                        <div class="skills__emoticon icon-emoticon-displeased"></div>
+                        <div class="skills__emoticon icon-emoticon-happy"></div>
+                    </div>
+                </header>
+                <dl class="skills__list">
+                    <dt class="skills__topic">
+                        JavaScript / ES6 / ES2015+
+                    </dt>
+                    <dd class="skills__score skills__score--10">
+                        10
+                    </dd>
+                    <dt class="skills__topic">
+                        HTML5
+                    </dt>
+                    <dd class="skills__score skills__score--10">
+                        10
+                    </dd>
+                    <dt class="skills__topic">
+                        CSS3
+                    </dt>
+                    <dd class="skills__score skills__score--10">
+                        10
+                    </dd>
+                    <dt class="skills__topic">
+                        Node.js
+                    </dt>
+                    <dd class="skills__score skills__score--8">
+                        8
+                    </dd>
+                    <dt class="skills__topic">
+                        Accessibility
+                    </dt>
+                    <dd class="skills__score skills__score--7">
+                        7
+                    </dd>
+                    <dt class="skills__topic">
+                        Web design
+                    </dt>
+                    <dd class="skills__score skills__score--2">
+                        2
+                    </dd>
+                </dl>
+                <footer class="skills__text skills__text--footer">
+                    <p>
+                        Familiar with a variety of tools, frameworks and libraries.
+                        <br>
+                        Experience with various development methodologies / concepts.
+                    </p>
+                </footer>
+            </section>
         </div>
     </div>
-    --}}
-    <section class="card">
-        <div class="card-image">
-            <div class="icon-person"></div>
-        </div>
-        <div class="card-text">
-            <h2>
-                Håvard Kvalvik
-            </h2>
-            <p>
-                Frontend developer
-            </p>
-            <footer>
-                <ul>
-                    <li>
-                        <a class="button" href="https://github.com/hkvalvik/" target="_blank">
-                            <span class="icon-git"></span>
-                            GitHub
-                        </a>
-                    </li>
-                    <li>
-                        <a class="button" href="https://www.npmjs.com/~hkvalvik" target="_blank">
-                            <svg
-                                    class="icon-npm"
-                                    version="1.1"
-                                    id="Layer_1"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    x="0px"
-                                    y="0px"
-                                    width="24px"
-                                    height="24px"
-                                    viewBox="0 0 24 24"
-                                    enable-background="new 0 0 24 24"
-                                    xml:space="preserve">
-                                    <path d="M0,11.326v4.016h6.686v1.347h5.338v-1.347H24v-8.03H0.001L0,11.326L0,11.326z M6.685,11.326v2.669H5.337v-3.992H4.04v3.992
-                                        H1.298V8.656h5.387V11.326z M13.361,11.33L13.346,14l-2.621-0.009v1.351H7.984V8.656h5.387L13.361,11.33L13.361,11.33z M22.7,11.326
-                                        v2.669h-1.347v-3.992h-1.347v4.017l-1.347-0.028v-3.988h-1.299v3.992h-2.693V8.656H22.7V11.326L22.7,11.326z M10.725,11.326v1.322
-                                        h1.25v-2.646h-1.25v1.321V11.326z"/>
-                            </svg>
-                            NPM
-                        </a>
-                    </li>
-                </ul>
-            </footer>
-        </div>
-    </section>
 </main>
 <script src="dist/index.min.js"></script>
 </body>

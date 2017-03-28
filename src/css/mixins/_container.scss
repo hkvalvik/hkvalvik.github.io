@@ -1,0 +1,8 @@
+@mixin container {
+  @include gutter-double(padding-left);
+  @include gutter-double(padding-right);
+  @include gutter(padding-top);
+  @include gutter(padding-bottom);
+  max-width: $max-width;
+  margin: 0 auto;
+}

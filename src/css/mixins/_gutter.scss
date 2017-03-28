@@ -1,0 +1,7 @@
+@mixin gutter($property) {
+  @include fontset-size($property, nth($fontset-block-margin-bottom, 1)/2, nth($fontset-block-margin-bottom, 2)/2);
+}
+
+@mixin gutter-double($property) {
+  @include fontset-size($property, nth($fontset-block-margin-bottom, 1), nth($fontset-block-margin-bottom, 2));
+}

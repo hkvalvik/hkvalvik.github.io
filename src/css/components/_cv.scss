@@ -1,0 +1,57 @@
+.cv {
+  @include scale(padding-right, padding-left);
+  @include scale(1.25, padding-top);
+  @include scale(.5, padding-bottom);
+  @include gutter-double(margin-bottom);
+  @include shadow-1dp;
+  background-color: #fff;
+  color: $color-dark;
+
+  &__header {}
+
+  &__heading {
+    @include fontset-font(h6);
+    margin: 0 0 1.5em 0;
+    color: $color-medium;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    @include fontset-font(p);
+    width: 50%;
+    line-height: 1.125;
+    padding-bottom: 1em;
+    vertical-align: top;
+  }
+
+  th {
+    text-align: left;
+    color: $color-dark;
+  }
+
+  td {
+    text-align: right;
+    color: $color-medium;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 0 0 .125em 0;
+  }
+
+  p:nth-child(1) {
+    font-weight: 400;
+  }
+
+  p:nth-child(2) {
+    font-weight: 300;
+  }
+}

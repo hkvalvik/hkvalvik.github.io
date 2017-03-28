@@ -10,8 +10,6 @@ $face-min-radius: 45%;
 $face-max-radius: 50%;
 
 $face-max-movement: 5%;
-//$face-eye-min-height: 70;
-//$face-eye-max-size: 75;
 
 $face-eye-top: -2.5%;
 $face-eye-min-width: 20;
@@ -88,13 +86,6 @@ $face-keyframe-interval: 10;
 @keyframes face-mouth {
   @include face-keyframes {
     bottom: face-random-between(15%, 50%);
-    //$top: face-random-between(5%, 15%);
-    //$bottom: face-random-between(50%, 100%);
-    //$left-right: face-random-between(5%, 25%);
-    //top: $top;
-    //right: $left-right;
-    //bottom: $bottom;
-    //left: $left-right;
   }
 }
 
@@ -137,8 +128,6 @@ $face-keyframe-interval: 10;
     border-radius: 50%;
     border: solid 1px rgba(black, .5);
     background-color: #000;
-    //box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px rgba(black, .5);
-    //box-shadow: inset 0 0 0 12px #fff;
     width: 50%;
     height: 50%;
     top: $face-eye-top;
@@ -161,37 +150,6 @@ $face-keyframe-interval: 10;
       transform-origin: left center;
       right: 0;
     }
-
-    /*
-    &:before,
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 25%;
-      height: 25%;
-      border-radius: 50%;
-      background-color: #000;
-      animation: {
-        name: face-eye-pupil;
-        duration: $face-eye-pupil-animation-duration;
-        fill-mode: both;
-        fill-mode: alternate;
-        timing-function: linear;
-        iteration-count: infinite;
-      };
-    }
-
-    &:before {
-
-    }
-
-    &:after {
-
-    }
-    */
   }
 
   $face-mouth-width: 110%;
@@ -232,17 +190,5 @@ $face-keyframe-interval: 10;
         iteration-count: infinite;
       };
     }
-
-    /*&:after {
-      content: '';
-      display: block;
-      position: absolute;
-      border-radius: 50%;
-      background-color: darken($fontset-color-primary, 15%);
-      top: 0;
-      right: 0;
-      bottom: 65%;
-      left: 0;
-    }*/
   }
 }

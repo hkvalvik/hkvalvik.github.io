@@ -1,0 +1,66 @@
+$home__profile-width: percentage(1/3);
+$home__profile-max-width: 360px;
+
+.home {
+  background-color: #fcfcfc;
+  color: $color-dark;
+  min-width: 320px;
+
+  .header {
+    background-color: transparent;
+    border-bottom: none 0;
+
+    &-content {
+      min-height: 70px;
+    }
+
+    &-home {
+      display: none;
+    }
+
+    &-nav {
+      background-color: transparent;
+    }
+
+    &-menu {
+      @include gutter-double(left);
+      right: auto;
+    }
+
+    &-toggle-label {
+      position: absolute;
+      top: -100px;
+    }
+  }
+
+  &__container {}
+
+  &__profile {
+    max-width: $home__profile-max-width;
+
+    @include media-small {
+      @include gutter-double(margin-bottom);
+    }
+    @include media-medium {
+      max-width: 200px;
+    }
+    @include media-medium-and-large {
+      @include gutter(padding-right);
+      float: left;
+      width: $home__profile-width;
+    }
+  }
+
+  &__cv {
+    @include media-small {
+      max-width: $home__profile-max-width;
+    }
+    @include media-medium-and-large {
+      @include gutter(padding-left);
+      float: left;
+      width: 100% - $home__profile-width;
+      max-width: 600px;
+    }
+  }
+
+}

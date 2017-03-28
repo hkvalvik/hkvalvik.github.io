@@ -1,0 +1,129 @@
+.skills {
+  @include scale(padding-right, padding-left);
+  @include scale(1.25, padding-top);
+  @include scale(.5, padding-bottom);
+  @include gutter-double(margin-bottom);
+  @include shadow-1dp;
+  background-color: #fff;
+  color: $color-dark;
+
+  &__header {
+    @include clearfix;
+  }
+
+  &__heading {
+    @include fontset-font(h6);
+    float: left;
+    width: 50%;
+    margin: 0 0 1.5em 0;
+    color: $color-medium;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &__emoticons {
+    @include clearfix;
+    float: left;
+    width: 50%;
+  }
+
+  &__emoticon {
+    color: $color-medium;
+  }
+
+  &__emoticon:first-child {
+    float: left;
+  }
+
+  &__emoticon:last-child {
+    float: right;
+  }
+
+  &__list {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__topic {
+    @include fontset-font(p);
+    float: left;
+    clear: left;
+    width: 50%;
+    margin: 0;
+    padding: 0 0 1em;
+    line-height: 1.125;
+    font-weight: 400;
+  }
+
+  &__score {
+    position: relative;
+    float: left;
+    clear: right;
+    width: calc(50% - 15px);
+    margin: 0 5px 0 10px;
+    overflow: hidden;
+    text-indent: -100px;
+    padding: 0;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+    }
+
+    &:before {
+      left: 0;
+      height: 2px;
+      transform: translateY(-50%);
+      background-color: $color-brand;
+    }
+
+    &:after {
+      width: 10px;
+      height: 10px;
+      border: solid 2px transparent;
+      border-top-color: $color-brand;
+      border-right-color: $color-brand;
+      transform: rotate(45deg) translate(-50%, -50%);
+      margin: 2px 0 0 -12px;
+    }
+
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        &:before {
+          width: percentage($i/10);
+        }
+
+        &:after {
+          left: percentage($i/10);
+        }
+      }
+    }
+  }
+
+  &__text {
+    @include fontset;
+    @include gutter(padding-top);
+
+    &--footer {
+      @include gutter(margin-top);
+      border-top: solid 1px #DC243A;
+    }
+
+    p:last-child {
+      margin-bottom: .25em;
+      line-height: 1.25;
+    }
+
+    ul:last-child {
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-bottom: .5em;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const handlebars = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
+const htmlmin = require('gulp-htmlmin');
 
 module.exports = function(gulp){
     return function(){
@@ -14,6 +15,7 @@ module.exports = function(gulp){
                 )
             )
             .pipe(rename('index.html'))
+            .pipe(htmlmin({collapseWhitespace: true}))
             .pipe(gulp.dest('.'));
     };
 };

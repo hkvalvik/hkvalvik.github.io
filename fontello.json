@@ -17,6 +17,18 @@
       "css": "person",
       "code": 61524,
       "src": "elusive"
+    },
+    {
+      "uid": "c64623255a4a7c72436b199b05296c4f",
+      "css": "emoticon-happy",
+      "code": 59405,
+      "src": "fontelico"
+    },
+    {
+      "uid": "043b585886018be7408f4c77c1a3759c",
+      "css": "emoticon-displeased",
+      "code": 59406,
+      "src": "fontelico"
     }
   ]
 }

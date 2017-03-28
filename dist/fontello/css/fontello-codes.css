@@ -1,3 +1,5 @@
 
+.icon-emoticon-happy:before { content: '\e80d'; } /* '' */
+.icon-emoticon-displeased:before { content: '\e80e'; } /* '' */
 .icon-git:before { content: '\f053'; } /* '' */
 .icon-person:before { content: '\f054'; } /* '' */

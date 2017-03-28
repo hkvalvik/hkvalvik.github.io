@@ -10,5 +10,7 @@
   /* font-size: 120%; */
 }
  
+.icon-emoticon-happy { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe80d;&nbsp;'); }
+.icon-emoticon-displeased { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe80e;&nbsp;'); }
 .icon-git { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf053;&nbsp;'); }
 .icon-person { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf054;&nbsp;'); }

@@ -1,0 +1,114 @@
+.header {
+  position: relative;
+  z-index: 1;
+  border-bottom: solid 1px #eee;
+  background-color: #fff;
+
+  &-content {
+    @include container;
+    @include clearfix;
+    position: relative;
+  }
+
+  &-home {
+    float: left;
+  }
+
+  &-menu {
+    position: absolute;
+    @include gutter-double(right);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-toggle {
+    @include fontset-font(h4);
+    @include gutter(padding);
+    display: inline-block;
+    padding-left: 0 !important;
+    font-size: 18px !important;
+    line-height: 1;
+
+    &-icon {
+      vertical-align: middle;
+      top: -1px;
+    }
+
+    &-label {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+      font-weight: 100;
+    }
+  }
+
+  &-logo {
+    @include fontset-font(h4);
+    display: inline-block;
+    background-color: $fontset-color-primary;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: .75;
+    color: #fff;
+  }
+
+  &-nav {
+    @include fontset;
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: #fff;
+    transition: all $hamburger-transition-duration ease;
+    opacity: 0;
+
+    nav {
+      @include container;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav ul {
+      @include fontset-size(margin-bottom, 2, 4);
+    }
+
+    nav a {
+      @include fontset-size(margin-bottom, 2, 4);
+      display: inline-block;
+      padding: 0;
+    }
+
+    nav a > * {
+      margin-bottom: 0;
+    }
+
+    nav h3 {
+      @include fontset-size(margin-bottom, 12, 16);
+      font-weight: 100;
+    }
+
+    nav h4 {
+      margin-bottom: 0;
+      border-bottom: solid 1px;
+      display: inline-block;
+      font-weight: 100;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    nav p {
+      @include fontset-size(margin-bottom, 8, 16);
+      line-height: 1.5;
+    }
+  }
+
+  &--active &-nav {
+    opacity: 1;
+  }
+
+  &--active &-nav:before {
+    opacity: 1;
+  }
+}

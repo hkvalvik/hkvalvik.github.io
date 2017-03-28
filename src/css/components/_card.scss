@@ -1,0 +1,110 @@
+$card-color: #888;
+$card-padding: 5% 5% 5% 0;
+
+.card {
+  width: 100%;
+  background-color: #fff;
+
+  @include media-small {
+    display: flex;
+  }
+  @include media-large {
+    display: flex;
+  }
+
+  &__image {
+    position: relative;
+
+    @include media-small {
+      flex: 1;
+    }
+    @include media-large {
+      flex: 1;
+    }
+  }
+
+  &__person {
+    top: 0;
+    right: 0;
+    left: 0;
+    background: {
+      image: url('../assets/me2.jpg');
+      size: cover;
+      position: center center;
+    };
+
+    @include media-small {
+      position: absolute;
+      bottom: 0;
+    }
+    @include media-medium {
+      padding-top: percentage(3/4);
+    }
+    @include media-large {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  &__text {
+    @include shadow-1dp;
+    position: relative;
+    padding-top: nth($card-padding, 1) * 1.5;
+    padding-left: nth($card-padding, 2);
+
+    @include media-small {
+      flex: 2;
+    }
+    @include media-large {
+      flex: 2;
+    }
+  }
+
+  h1 {
+    @include fontset-font(h4);
+    margin: nth($card-padding, 1) nth($card-padding, 2) 0 nth($card-padding, 4);
+  }
+
+  p {
+    @include fontset-font(h6);
+    margin: 0 nth($card-padding, 2) nth($card-padding, 3) nth($card-padding, 4);
+  }
+
+  &__link-list {
+    @include clearfix;
+    margin: 0;
+    padding: $card-padding;
+    list-style: none;
+  }
+
+  &__link-list li {
+    padding: 0;
+
+    @include media-small {
+      margin: 0 10px 5px 0;
+      float: left;
+    }
+    @include media-medium {
+      margin: 0 0 3px;
+    }
+    @include media-large {
+      margin: 0 10px 5px 0;
+      float: left;
+    }
+  }
+
+  &__link {
+    @include fontset-font(button);
+    font-weight: 500;
+    font-size: 14px !important;
+    color: $color-brand;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .icon-person:before {
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
